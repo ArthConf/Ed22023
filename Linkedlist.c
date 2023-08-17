@@ -2,17 +2,39 @@
 #include <stdbool.h>
 #include "Linkedlist.h"
 
-int push(LinkedList *list, void *data) {
-  Node *newNode = (Node*) malloc(sizeof(Node));
-  if (newNode==NULL) return -1;
-  newNode->data = data;
-  newNode->next = NULL;
-  if (isEmpty(list)) //se a lista estiver vazia
-    list->first = newNode; //novo nó é o primeiro
-  else {
-    newNode->next = list->first; //o topo atual será o segundo da lista
-    list->first = newNode; //o novo nó será o topo
+
+void init(LinkedList *list){
+  list->first = NULL;
+  list->size = 0;
+}
+int enqueue(LinkedList *list, void *data){
+  Node* no = (Node*)malloc(sizeof(Node));
+  no->data=data;
+  no->next=NULL;
+  
+  
+  if(list->size == 0){
+    list->first = no;
+  }else{
+    Node *auxiliar = list->first;
+    while(auxiliar->next != NULL) auxiliar = auxiliar->next;
+    auxiliar->next = no;
   }
   list->size++;
-  return 1;
+  
 }
+
+void* dequeue(LinkedList *list);
+void* first(LinkedList *list);
+void* last(LinkedList *list);
+int push(LinkedList *list, void *data);
+void* pop(LinkedList *list);
+void* top(LinkedList *list);
+bool isEmpty(LinkedList *list);
+int indexOf(LinkedList *list, void *data, compare equal);
+void* getPos(LinkedList *list, int pos);
+Node* getNodeByPos(LinkedList *list, int pos);
+int add(LinkedList *list, int pos, void *data);
+int addAll(LinkedList *listDest, int pos, LinkedList *listSource);
+void* removePos(LinkedList *list, int pos);
+bool removeData(LinkedList *list, void *data, compare equal);
