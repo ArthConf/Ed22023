@@ -1,6 +1,6 @@
 Linkedlist: clean
 	@echo "Compilando o programa Linkedlist"
-	@gcc Linkedlist.c Linkedlist.h LinkedlistTest.c -o Linkedlist
+	@gcc  --std=c99 -DLOG_USE_COLOR log.h log.c Linkedlist.c Linkedlist.h LinkedlistTest.c -o Linkedlist
 	
 	@chmod +x Linkedlist
 	

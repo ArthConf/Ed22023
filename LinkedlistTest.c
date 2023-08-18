@@ -17,6 +17,7 @@ int main (){
     enqueue(&list,num);
     printf("LIST SIZE: %d\n",list.size);
     scanf("%d",&esc);
+    
     }
 
     
