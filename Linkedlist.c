@@ -34,7 +34,29 @@ int enqueue(LinkedList *list, void *data){
   list->size++;
   
 }
+
+//Procurar o endereço do primeiro dado da lista
+void *first(LinkedList *list){
+  return(isEmpty(list))?NULL:list->first->data;
+}
+
+void* last(LinkedList *list){
+    void* data = NULL;
+    if(!isEmpty(list)) {
+      Node *aux = list->first;
+      while (aux->next != NULL){
+          aux = aux->next;
+          data = aux-> data;
+      }
+    }
+}
+
 /*
+bool isEmpty(LinkedList(*list)){
+  log_info("Verificando se a lista está vázia");
+  return(list->size==0);
+}*/
+
 bool isEmpty(LinkedList *list) {
 	log_info("Verificando se a lista está vazia");
 	log_trace("isEmpty ->");
@@ -51,7 +73,7 @@ bool isEmpty(LinkedList *list) {
 		return false;
 	}
 }
-
+/*
 void* dequeue(LinkedList *list) {
   log_info("Removendo o primeiro dado da lista");
   log_trace("dequeue ->");
@@ -73,12 +95,37 @@ void* dequeue(LinkedList *list) {
 	}
 }
 */
-void* dequeue(LinkedList *list);
+void* dequeue(LinkedList *list){
+  if(isEmpty(list)) return NULL;
+  Node *trash = list->first;  
+  list->first = list->first->next;
+  void *data = trash->data;
+  free(trash);
+  list->size--;
+  return data;
+
+}
 void* first(LinkedList *list);
 void* last(LinkedList *list);
-int push(LinkedList *list, void *data);
-void* pop(LinkedList *list);
-void* top(LinkedList *list);
+
+int push(LinkedList *list, void *data){
+  Node *newNode = (Node*) malloc(sizeof(Node));
+  if(newNode == NULL) return -1;
+  newNode->data = data;
+  newNode->next = NULL;
+  if (isEmpty(list)) list->first = newNode;
+  else newNode->next = list->first, list->first = newNode;
+  list->size++;
+  return 1;
+}
+
+void* pop(LinkedList *list){
+  return dequeue(list);
+}
+void* top(LinkedList *list){
+  return first(list);
+}
+
 bool isEmpty(LinkedList *list);
 int indexOf(LinkedList *list, void *data, compare equal);
 void* getPos(LinkedList *list, int pos);

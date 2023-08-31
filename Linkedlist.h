@@ -12,6 +12,7 @@ typedef struct LinkedList {
   int size;
 }LinkedList;
 
+
 typedef bool (*compare)(void*,void*);
 
 void init(LinkedList *list);

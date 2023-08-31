@@ -19,6 +19,10 @@ int main (){
     scanf("%d",&esc);
     
     }
+    int remove = *(int*)pop(&list);
+    printf("Dado removido: %d\n",remove);
+    /*int retirado = *(int*)dequeue(&list);
+    printf("Dado removido: %d\n",retirado);*/
 
     
 }
