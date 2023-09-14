@@ -1,3 +1,11 @@
+GeneralizedLinked: clean
+	@echo "Compilando o programa Generalized Linked"
+	@gcc  --std=c99 -DLOG_USE_COLOR log.h log.c GeneralizedLinkedTest.c GeneralizedLinkedTest.h GeneralizedLinkedTestList.c -o GeneralizedLinked
+	
+	@chmod +x GeneralizedLinked
+	
+	@./GeneralizedLinked
+	@echo "===================================================================="
 Linkedlist: clean
 	@echo "Compilando o programa Linkedlist"
 	@gcc  --std=c99 -DLOG_USE_COLOR log.h log.c Linkedlist.c Linkedlist.h LinkedlistTest.c -o Linkedlist

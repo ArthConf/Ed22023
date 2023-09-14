@@ -57,22 +57,7 @@ bool isEmpty(LinkedList(*list)){
   return(list->size==0);
 }*/
 
-bool isEmpty(LinkedList *list) {
-	log_info("Verificando se a lista está vazia");
-	log_trace("isEmpty ->");
-	if (list == NULL) {
-		log_error("Parâmetro inválido");
-		log_debug("list: %p", list);
-		return true;
-	}
-	log_debug("list->size: %d", list->size);
-	log_trace("isEmpty <-");
-	if (list->size == 0) {
-		return true;
-	} else {
-		return false;
-	}
-}
+
 /*
 void* dequeue(LinkedList *list) {
   log_info("Removendo o primeiro dado da lista");
@@ -126,11 +111,56 @@ void* top(LinkedList *list){
   return first(list);
 }
 
-bool isEmpty(LinkedList *list);
-int indexOf(LinkedList *list, void *data, compare equal);
+bool isEmpty(LinkedList *list){
+	log_info("Verificando se a lista está vazia");
+	log_trace("isEmpty ->");
+	if (list == NULL) {
+		log_error("Parâmetro inválido");
+		log_debug("list: %p", list);
+		return true;
+	}
+	log_debug("list->size: %d", list->size);
+	log_trace("isEmpty <-");
+	if (list->size == 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+int indexOf(LinkedList *list, void *data, compare equal){
+  if (isEmpty(list)) return -1;
+  int count = 0;
+  Node *aux = list -> first;
+  while(aux!=NULL & !equal(aux->data,data)){
+    aux=aux->next; 
+    count++;
+  }
+
+  log_info("Posição do valor procurado: %d\n\n",count);
+  return(aux==NULL)?-1:count; // if(aux==null) return -1; ou seja, se não encontrar, retorna -1. Se encontrar, retorna o contador.
+}
+
+bool verifica(void *data1,void *data2){
+  return (*(int*)data1)==(*(int*)data2);
+}
+
 void* getPos(LinkedList *list, int pos);
 Node* getNodeByPos(LinkedList *list, int pos);
 int add(LinkedList *list, int pos, void *data);
 int addAll(LinkedList *listDest, int pos, LinkedList *listSource);
 void* removePos(LinkedList *list, int pos);
-bool removeData(LinkedList *list, void *data, compare equal);
+bool removeData(LinkedList *list, void *data, compare equal){
+  if(isEmpty(list)) log_info("Lista vazia");return -1;
+  Node *nodeRemove = NULL;
+  if(equal(list->first->data,data)){
+    nodeRemove = list->first;
+    list->first = list->first->next;
+    free(nodeRemove->data);
+    free(nodeRemove);
+    list->size--;
+    log_info("Primeiro valor removido\n\n");
+    return true;
+  }else log_info("O primeiro valor não foi digitado\n\n");
+  
+}

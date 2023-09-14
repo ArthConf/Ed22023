@@ -14,7 +14,7 @@ typedef struct LinkedList {
 
 
 typedef bool (*compare)(void*,void*);
-
+bool verifica(void *data1,void *data2);
 void init(LinkedList *list);
 int enqueue(LinkedList *list, void *data);
 void* dequeue(LinkedList *list);
