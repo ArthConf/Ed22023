@@ -1,3 +1,27 @@
+Alocacao200: clean
+	@echo "Compilando o programa Alocacao200"
+	@gcc  Alocacao200.c -o Alocacao200
+	@chmod +x Alocacao200
+	@./Alocacao200
+	@echo "===================================================================="
+Alocacao199: clean
+	@echo "Compilando o programa Alocacao199"
+	@gcc  Alocacao199.c -o Alocacao199
+	@chmod +x Alocacao199
+	@./Alocacao199
+	@echo "===================================================================="
+Alocacao198: clean
+	@echo "Compilando o programa Alocacao198"
+	@gcc  Alocacao198.c -o Alocacao198
+	@chmod +x Alocacao198
+	@./Alocacao198
+	@echo "===================================================================="
+AlocacaoDeMemoria: clean
+	@echo "Compilando o programa AlocacaoDeMemoria"
+	@gcc  Alocacao197.c -o AlocacaoDeMemoria
+	@chmod +x AlocacaoDeMemoria
+	@./AlocacaoDeMemoria
+	@echo "===================================================================="
 ListaGeneralizada: clean
 	@echo "Compilando o programa Lista Generalizada"
 	@gcc  --std=c99 -DLOG_USE_COLOR log.h log.c ListaGeneralizada.c ListaGeneralizada.h ListaGeneralizadaTeste.c -o ListaGeneralizada
