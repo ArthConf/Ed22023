@@ -1,3 +1,9 @@
+Market: clean
+	@echo "Compilando o código Market"
+	@gcc Market.c -o Market
+	@chmod +x Market
+	@./Market
+	@echo "Executando o código"
 StructEmStruct: clean
 	@echo "Compilando o programa StructEmStruct"
 	@gcc  StructEmStruct.c -o StructEmStruct
