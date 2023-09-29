@@ -27,7 +27,10 @@ int enqueue(LinkedList *list, void *data){
     log_info("Lista vazia");
   }else{
     Node *auxiliar = list->first;
-    while(auxiliar->next != NULL) log_info("Navegando entre os espaços de memória"),auxiliar = auxiliar->next;
+    while(auxiliar->next != NULL){
+     log_info("Navegando entre os espaços de memória");
+     auxiliar = auxiliar->next;
+    }
     auxiliar->next = no;
     log_trace("enqueue<-");
   }

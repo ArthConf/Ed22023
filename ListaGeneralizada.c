@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "ListaGeneralizada.h"
 #include "log.h"
-int addAtom(Node **list, int atom){
+int addAtom(Node **list, char atom){
     log_trace("AddAtom->");
     Node* no = (Node*)malloc(sizeof(Node));
     log_info("Alocando memória para o no");
@@ -25,26 +25,27 @@ int addAtom(Node **list, int atom){
     }
     
 }
+
 int addList(Node **list, Node **subList){
     return 0;
 }
-Node* head(Node *list){
+/*Node* head(Node *list){
     return NULL;
 }
 Node* tail(Node *list){
     return NULL;
 }
-void show(Node *list){
+*/void show(Node *list){
     printf("(");
     Node *aux=list;
     while(aux!= NULL){
     
-    printf(" %d",aux->atomList.atom);
+    printf(" %s",aux->atomList.atom);
     aux= aux->next;
     } 
     printf(")");
 }
-bool search(Node *list, int atom){
+/*bool search(Node *list, char atom){
     Node *aux = list;
     while(aux!=atomList.atom){
         aux = aux->next;
@@ -53,4 +54,4 @@ bool search(Node *list, int atom){
 }
 int depth(Node *list){
     return 0;
-}
+}*/

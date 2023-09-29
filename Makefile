@@ -1,3 +1,21 @@
+StringTreino: clean
+	@echo "Compilando o programa StringTreino"
+	@gcc  StringTreino.c -o StringTreino
+	@chmod +x StringTreino
+	@./StringTreino
+	@echo "===================================================================="
+Alocacao202: clean
+	@echo "Compilando o programa Alocacao202"
+	@gcc  Alocacao202.c -o Alocacao202
+	@chmod +x Alocacao202
+	@./Alocacao202
+	@echo "===================================================================="
+Alocacao201: clean
+	@echo "Compilando o programa Alocacao201"
+	@gcc  Alocacao201.c -o Alocacao201
+	@chmod +x Alocacao201
+	@./Alocacao201
+	@echo "===================================================================="
 Alocacao200: clean
 	@echo "Compilando o programa Alocacao200"
 	@gcc  Alocacao200.c -o Alocacao200

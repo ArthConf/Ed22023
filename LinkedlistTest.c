@@ -10,14 +10,15 @@ int main (){
     init(&list);
     int *num= (int*)malloc(sizeof(int));
     *num=0;
-    while(*num!=-1){
+    while(num!=-1){
     num= (int*)malloc(sizeof(int));
     printf("\n\nDigite os valores das compras: ");
     scanf(" %d",num);
-    if(*num==-1) break;
+    
     enqueue(&list,num);
+     }
     printf("LIST SIZE: %d\n",list.size);
-    }
+  
     int *valorD = (int*)malloc (sizeof(int));
     int *valorR = (int*)malloc (sizeof(int));
     printf("Digite um valor que você deseja encontrar: ");

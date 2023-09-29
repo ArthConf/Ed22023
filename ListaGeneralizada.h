@@ -6,18 +6,18 @@
 typedef struct Node {
     int type; //0 atomo e 1 lista
     union {
-        int atom;
+        char atom;
         struct Node *list;
     }atomList;
     struct Node *next;
 }Node;
 
-int addAtom(Node **list, int atom);
-int addList(Node **list, Node **subList);
+int addAtom(Node **list, char atom);
+/*int addList(Node **list, Node **subList);
 Node* head(Node *list);
 Node* tail(Node *list);
-void show(Node *list);
-bool search(Node *list, int atom);
+*/void show(Node *list);
+/*bool search(Node *list, char atom);
 int depth(Node *list);
-
+*/
 #endif
