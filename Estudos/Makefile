@@ -1,3 +1,50 @@
+MenorEmaior: clean
+	@echo "Compilando o programa MenorEmaior"
+	@gcc  MenorEmaior.c -o MenorEmaior
+	@chmod +x MenorEmaior
+	@./MenorEmaior
+	@echo "===================================================================="
+Pointer191: clean
+	@echo "Compilando o programa Pointer191"
+	@gcc  Pointer191.c -o Pointer191
+	@chmod +x Pointer191
+	@./Pointer191
+	@echo "===================================================================="
+Pointer190: clean
+	@echo "Compilando o programa Pointer190"
+	@gcc  Pointer190.c -o Pointer190
+	@chmod +x Pointer190
+	@./Pointer190
+	@echo "===================================================================="
+Pointer188: clean
+	@echo "Compilando o programa Pointer188"
+	@gcc  Pointer188.c -o Pointer188
+	@chmod +x Pointer188
+	@./Pointer188
+	@echo "===================================================================="
+Pointer187: clean
+	@echo "Compilando o programa Pointer187"
+	@gcc  Pointer187.c -o Pointer187
+	@chmod +x Pointer187
+	@./Pointer187
+	@echo "===================================================================="Pointer187: clean
+	@echo "Compilando o programa Pointer187"
+	@gcc  Pointer187.c -o Pointer187
+	@chmod +x Pointer187
+	@./Pointer187
+	@echo "===================================================================="
+Pointer1: clean
+	@echo "Compilando o programa Pointer"
+	@gcc  Pointer1.c -o Pointer1
+	@chmod +x Pointer1
+	@./Pointer1
+	@echo "===================================================================="
+Pointer: clean
+	@echo "Compilando o programa Pointer"
+	@gcc  Pointer.c -o Pointer
+	@chmod +x Pointer
+	@./Pointer
+	@echo "===================================================================="
 Market: clean
 	@echo "Compilando o código Market"
 	@gcc Market.c -o Market
