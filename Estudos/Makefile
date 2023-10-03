@@ -1,3 +1,15 @@
+ImprimirEndereco: clean
+	@echo "Compilando o programa ImprimirEndereco"
+	@gcc  ImprimirEndereco.c -o ImprimirEndereco
+	@chmod +x ImprimirEndereco
+	@./ImprimirEndereco
+	@echo "===================================================================="
+trocaAeB: clean
+	@echo "Compilando o programa trocaAeB"
+	@gcc  trocaAeB.c -o trocaAeB
+	@chmod +x trocaAeB
+	@./trocaAeB
+	@echo "===================================================================="
 MenorEmaior: clean
 	@echo "Compilando o programa MenorEmaior"
 	@gcc  MenorEmaior.c -o MenorEmaior

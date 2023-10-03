@@ -4,7 +4,7 @@
 
 void menorEmaior(int *v,int tam){
     int maiorV = *v;
-    int menorV = *v;//Obrigatoriamente devemos inicializar essas variáveis com a primeira posição do vetor, com a finalidade de percorrer todo o vetor;
+    int menorV = *v;//Obrigatoriamente devemos inicializar essas variáveis com a primeira posição do vetor, com a finalidade de percorrer todo o vetor;'
     for(int i = 0; i<tam;i++){
         if(menorV>*(v+i)) menorV = *(v+i);
         if(maiorV<*(v+i)) maiorV = *(v+i);
