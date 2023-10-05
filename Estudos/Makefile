@@ -1,3 +1,15 @@
+EstudandoInserir: clean
+	@echo "Compilando o programa EstudandoInserir"
+	@gcc  EstudandoInserir.c -o EstudandoInserir
+	@chmod +x EstudandoInserir
+	@./EstudandoInserir
+	@echo "===================================================================="
+ListaEncadeada1: clean
+	@echo "Compilando o programa ListaEncadeada1"
+	@gcc  ListaEncadeada1.c -o ListaEncadeada1
+	@chmod +x ListaEncadeada1
+	@./ListaEncadeada1
+	@echo "===================================================================="
 ImprimirEndereco: clean
 	@echo "Compilando o programa ImprimirEndereco"
 	@gcc  ImprimirEndereco.c -o ImprimirEndereco
