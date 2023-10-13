@@ -1,3 +1,9 @@
+Hash: clean
+	@echo "Compilando o programa HashTable"
+	@gcc  HashTable.c -o HashTable
+	@chmod +x HashTable
+	@./HashTable
+	@echo "===================================================================="
 EstudandoInserir: clean
 	@echo "Compilando o programa EstudandoInserir"
 	@gcc  EstudandoInserir.c -o EstudandoInserir
